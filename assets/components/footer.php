@@ -1,91 +1,52 @@
 <!-- ===== FOOTER SECTION ===== -->
 <footer class="footer-section">
   <div class="container">
-    <!-- Newsletter Section -->
-    <div class="newsletter-section">
-      <h3>Stay Updated</h3>
-      <p>Subscribe to our newsletter for the latest updates and offers</p>
-      <form class="newsletter-form" action="subscribe.php" method="POST">
-        <input type="email" name="email" placeholder="Type Email" required>
-        <button type="submit" class="subscribe-btn">Subscribe</button>
-      </form>
-    </div>
+    <div class="footer-main-content">
+      <!-- Logo and Description -->
+      <div class="footer-brand">
+        <img src="assets/images/logo.png" alt="Playdo Logo" class="footer-logo">
+        <p class="footer-description">
+          Playdo strives to build a fun and easy experience of getting free Robux. 
+          We reward consistent and honest users with bonuses, promocodes and events.
+        </p>
+      </div>
 
-    <!-- Footer Links -->
-    <div class="footer-links-container">
-      <div class="footer-column">
-        <h4>GAMES LIST</h4>
+      <!-- Quick Links -->
+      <div class="footer-links">
+        <h4>Quick Links</h4>
         <ul>
-          <?php
-          $games = ["Dicks game", "Lobestar", "Gangstar", "Royal Casino", "Align fight", "Black night"];
-          foreach ($games as $game) {
-            echo "<li><a href='game.php?name=" . urlencode($game) . "'>$game</a></li>";
-          }
-          ?>
+          <li><a href="index.php">Home</a></li>
+          <li><a href="about.php">About Us</a></li>
+          <li><a href="blog.php">Blog</a></li>
         </ul>
       </div>
 
-      <div class="footer-column">
-        <h4>COMPANY</h4>
+
+      <!-- Help Center -->
+      <div class="footer-links">
+        <h4>Help Center</h4>
         <ul>
-          <?php
-          $companyLinks = [
-            "About us" => "about.php",
-            "Services" => "services.php",
-            "Events" => "events.php",
-            "Promotion" => "promotions.php",
-            "Transition" => "transition.php",
-            "Social Media" => "social.php"
-          ];
-          foreach ($companyLinks as $text => $url) {
-            echo "<li><a href='$url'>$text</a></li>";
-          }
-          ?>
+          <li><a href="help.php">Help & Support</a></li>
+          <li><a href="faq.php">FAQ</a></li>
+          <li><a href="contact.php">Contact</a></li>
         </ul>
       </div>
 
-      <div class="footer-column">
-        <h4>ACCOUNT</h4>
-        <ul>
-          <?php
-          $accountLinks = [
-            "Ripple coin" => "ripple.php",
-            "Bitcoin" => "bitcoin.php",
-            "Ethereum" => "ethereum.php",
-            "Light coin" => "lightcoin.php",
-            "Coin base" => "coinbase.php",
-            "Gold Coin" => "goldcoin.php"
-          ];
-          foreach ($accountLinks as $text => $url) {
-            echo "<li><a href='$url'>$text</a></li>";
-          }
-          ?>
-        </ul>
-      </div>
-
-      <div class="footer-column">
-        <h4>SUPPORT</h4>
-        <ul>
-          <?php
-          $supportLinks = [
-            "Customer Care" => "support.php",
-            "Live chat" => "chat.php",
-            "Notification" => "notifications.php",
-            "Privacy" => "privacy.php",
-            "Terms & Condition" => "terms.php",
-            "Contact us" => "contact.php"
-          ];
-          foreach ($supportLinks as $text => $url) {
-            echo "<li><a href='$url'>$text</a></li>";
-          }
-          ?>
-        </ul>
+      <!-- Social Media -->
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+        </div>
       </div>
     </div>
 
     <!-- Copyright -->
     <div class="copyright">
-      <p>Copyright © <?php echo date("Y"); ?> playdo All Rights Reserved</p>
+      <p>Copyright © <?php echo date("Y"); ?> Playdo All Rights Reserved</p>
     </div>
   </div>
 </footer>

@@ -1,6 +1,11 @@
 <?php
-// Check if user is logged in (you'll need to implement your authentication logic)
-$isLoggedIn = false; // This should come from your session/auth system
+// Only start a session if one isn't already active
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+$isLoggedIn = isset($_SESSION['user']);
+$user = $isLoggedIn ? $_SESSION['user'] : null;
 ?>
 
 <!-- Top Info Bar -->
@@ -22,7 +27,7 @@ $isLoggedIn = false; // This should come from your session/auth system
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg">
   <div class="container">
-    <a class="navbar-brand" href="index.php">
+    <a class="navbar-brand" href="home.php">
       <img src="https://via.placeholder.com/150x50?text=LOGO" alt="Logo" class="logo">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -31,7 +36,7 @@ $isLoggedIn = false; // This should come from your session/auth system
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : '' ?>" href="index.php">Home</a>
+          <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : '' ?>" href="home.php">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'play.php' ? 'active' : '' ?>" href="play.php">Play</a>
@@ -48,19 +53,12 @@ $isLoggedIn = false; // This should come from your session/auth system
       </ul>
       <div class="auth-buttons">
         <?php if ($isLoggedIn): ?>
-          <div class="dropdown profile-dropdown">
-            <button class="btn-profile dropdown-toggle" data-bs-toggle="dropdown">
-              <i class="fas fa-user-circle"></i> My Profile
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="dashboard.php">Dashboard</a></li>
-              <li><a class="dropdown-item" href="rewards.php">Rewards</a></li>
-              <li><a class="dropdown-item" href="logout.php">Logout</a></li>
-            </ul>
-          </div>
+          <a href="profile.php" class="btn-profile">
+            <i class="fas fa-user-circle"></i> Profile
+          </a>
         <?php else: ?>
-          <button class="btn-login" onclick="window.location.href='login.php'">Login</button>
-          <button class="btn-register" onclick="window.location.href='register.php'">Register</button>
+          <a href="login.php" class="btn-login">Login</a>
+          <a href="login.php?action=register" class="btn-register">Register</a>
         <?php endif; ?>
       </div>
     </div>

@@ -1,0 +1,38 @@
+/* Profile Card Styling */
+.profile-card {
+    background: rgba(38, 37, 63, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.label {
+    color: #d5057f;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.value {
+    color: #ffffff;
+    padding-left: 1rem;
+}
+
+/* Button Styling */
+.btn-outline-primary {
+    border-color: #d5057f;
+    color: #d5057f;
+}
+
+.btn-outline-primary:hover {
+    background-color: #d5057f;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #d5057f;
+    border-color: #d5057f;
+}
+
+.btn-primary:hover {
+    background-color: #b8046b;
+    border-color: #b8046b;
+}

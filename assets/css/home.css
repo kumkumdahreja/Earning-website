@@ -149,41 +149,39 @@ body {
   box-shadow: 0 5px 15px rgba(213, 5, 127, 0.4);
 }
 
-/* Profile Dropdown */
-.profile-dropdown {
-  display: none;
-  margin-left: 20px;
-}
 
+/* Profile Button Styles */
 .btn-profile {
   background: var(--primary-color);
   color: white;
   border: none;
-  padding: 8px 20px;
+  padding: 8px 22px;
   border-radius: 5px;
   font-weight: 600;
   display: flex;
   align-items: center;
   gap: 8px;
+  text-decoration: none;
+  transition: all 0.3s;
+  font-size: 14px;
+}
+
+.btn-profile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(213, 5, 127, 0.4);
+  color: white;
 }
 
 .btn-profile i {
   font-size: 18px;
 }
 
-.dropdown-menu {
-  background-color: var(--dark-color);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.dropdown-item {
-  color: var(--text-light);
-  padding: 8px 16px;
-}
-
-.dropdown-item:hover {
-  background-color: var(--primary-color);
-  color: white;
+/* Adjust auth buttons spacing */
+.auth-buttons {
+  display: flex;
+  gap: 12px;
+  margin-left: 20px;
+  align-items: center;
 }
 
 /* ===== HERO SECTION ===== */
@@ -1191,75 +1189,30 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Newsletter Section */
-.newsletter-section {
-  text-align: center;
-  margin-bottom: 50px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.newsletter-section h3 {
-  color: white;
-  font-size: 28px;
-  margin-bottom: 15px;
-}
-
-.newsletter-section p {
-  margin-bottom: 25px;
-  font-size: 16px;
-}
-
-.newsletter-form {
-  display: flex;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.newsletter-form input {
-  flex: 1;
-  padding: 15px 20px;
-  border: none;
-  border-radius: 4px 0 0 4px;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
-  font-size: 16px;
-}
-
-.newsletter-form input::placeholder {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.subscribe-btn {
-  background: #d5057f;
-  color: white;
-  border: none;
-  padding: 0 30px;
-  font-weight: 600;
-  border-radius: 0 4px 4px 0;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.subscribe-btn:hover {
-  background: #b8046b;
-}
-
-/* Footer Links */
-.footer-links-container {
+.footer-main-content {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  margin-bottom: 40px;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 50px;
 }
 
-.footer-column h4 {
+.footer-brand {
+  max-width: 300px;
+}
+
+.footer-logo {
+  max-width: 150px;
+  margin-bottom: 20px;
+}
+
+.footer-description {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.footer-links h4,
+.footer-social h4 {
   color: white;
   font-size: 18px;
   margin-bottom: 20px;
@@ -1267,7 +1220,8 @@ body {
   padding-bottom: 10px;
 }
 
-.footer-column h4::after {
+.footer-links h4::after,
+.footer-social h4::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -1277,28 +1231,51 @@ body {
   background: #d5057f;
 }
 
-.footer-column ul {
+.footer-links ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footer-column li {
+.footer-links li {
   margin-bottom: 12px;
 }
 
-.footer-column a {
+.footer-links a {
   color: #c4d5ff;
   text-decoration: none;
   transition: color 0.3s;
   font-size: 15px;
 }
 
-.footer-column a:hover {
+.footer-links a:hover {
   color: #d5057f;
 }
 
-/* Copyright */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: #c4d5ff;
+  font-size: 20px;
+  transition: all 0.3s;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icons a:hover {
+  color: white;
+  background: #d5057f;
+  transform: translateY(-3px);
+}
+
 .copyright {
   text-align: center;
   padding-top: 30px;
@@ -1308,28 +1285,23 @@ body {
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .footer-links-container {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 992px) {
+  .footer-main-content {
+    grid-template-columns: 1fr 1fr;
   }
   
-  .newsletter-form {
-    flex-direction: column;
-  }
-  
-  .newsletter-form input,
-  .newsletter-form .subscribe-btn {
-    width: 100%;
-    border-radius: 4px;
-  }
-  
-  .newsletter-form input {
-    margin-bottom: 10px;
+  .footer-brand {
+    grid-column: span 2;
+    max-width: 100%;
   }
 }
 
-@media (max-width: 480px) {
-  .footer-links-container {
+@media (max-width: 576px) {
+  .footer-main-content {
     grid-template-columns: 1fr;
+  }
+  
+  .footer-brand {
+    grid-column: span 1;
   }
 }
