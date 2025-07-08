@@ -103,3 +103,72 @@ document.addEventListener('DOMContentLoaded', function() {
     observer.observe(card);
   });
 });
+
+
+
+// ===== FAQ SECTION JS =====
+document.addEventListener('DOMContentLoaded', function() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    
+    question.addEventListener('click', () => {
+      // Close all other items
+      faqItems.forEach(otherItem => {
+        if (otherItem !== item && otherItem.classList.contains('active')) {
+          otherItem.classList.remove('active');
+        }
+      });
+      
+      // Toggle current item
+      item.classList.toggle('active');
+    });
+  });
+  
+  // Animation when section comes into view
+  const faqObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+        faqObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.style.animation = 'fadeInUp 0.5s ease-out forwards';
+    item.style.animationPlayState = 'paused';
+    faqObserver.observe(item);
+  });
+});
+
+
+// ===== CTA SECTION JS =====
+document.addEventListener('DOMContentLoaded', function() {
+  const ctaButton = document.querySelector('.cta-button');
+  
+  // Button hover effect
+  ctaButton.addEventListener('mouseenter', function() {
+    this.style.animation = 'none';
+    void this.offsetWidth; // Trigger reflow
+    this.style.animation = 'pulse 1.5s infinite';
+  });
+  
+  // Animation when section comes into view
+  const ctaObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = 'translateY(0)';
+        ctaObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  const ctaContent = document.querySelector('.cta-content');
+  ctaContent.style.opacity = 0;
+  ctaContent.style.transform = 'translateY(20px)';
+  ctaContent.style.transition = 'all 0.8s ease-out';
+  ctaObserver.observe(ctaContent);
+});

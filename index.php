@@ -19,71 +19,9 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Top Info Bar -->
-    <div class="top-bar">
-      <div class="container">
-        <div class="contact-info">
-          <span><i class="fas fa-envelope"></i> info@gamingrewards.com</span>
-          <span><i class="fas fa-phone"></i> +1 (123) 456-7890</span>
-        </div>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-discord"></i></a>
-        </div>
-      </div>
-    </div>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-          <img
-            src="https://via.placeholder.com/150x50?text=LOGO"
-            alt="Logo"
-            class="logo"
-          />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Home</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Play</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Rewards</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-          </ul>
-          <div class="auth-buttons">
-            <button class="btn-login">Login</button>
-            <button class="btn-register">Register</button>
-            <!-- This will show when logged in -->
-            <div class="dropdown profile-dropdown" style="display: none">
-              <button
-                class="btn-profile dropdown-toggle"
-                data-bs-toggle="dropdown"
-              >
-                <i class="fas fa-user-circle"></i> My Profile
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Dashboard</a></li>
-                <li><a class="dropdown-item" href="#">Rewards</a></li>
-                <li><a class="dropdown-item" href="#">Logout</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </nav>
+    <!-- navbar section -->
+ <?php include 'assets/components/navbar.php'; ?>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -326,6 +264,74 @@
     </div>
   </div>
 </section>
+
+<!-- ===== REFERRAL BONUS SECTION ===== -->
+<section class="referral-section">
+  <div class="container">
+    <!-- Divider Line -->
+    <div class="section-divider"></div>
+    
+    <div class="referral-content">
+      <h2>Referral Bonus Level</h2>
+      <p class="section-description">Help agencies to define their new business objectives and then<br>create professional software.</p>
+      
+      <div class="bonus-cards">
+        <!-- Card 1 -->
+        <div class="bonus-card">
+          <div class="card-number orange">01</div>
+          <div class="card-circle orange-icon">
+            <i class="fas fa-gift"></i>
+          </div>
+          <div class="card-text">
+            <h3>Level 01 Instant 10%</h3>
+            <p>Bonus Reward</p>
+          </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="bonus-card">
+          <div class="card-number blue">02</div>
+          <div class="card-circle blue-icon">
+            <i class="fas fa-coins"></i>
+          </div>
+          <div class="card-text">
+            <h3>Level 02 Instant 20%</h3>
+            <p>Bonus Reward</p>
+          </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="bonus-card">
+          <div class="card-number green">03</div>
+          <div class="card-circle green-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <div class="card-text">
+            <h3>Level 03 Instant 30%</h3>
+            <p>Bonus Reward</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<?php include 'assets/components/faq.php'; ?>
+
+<!-- ===== CTA SECTION ===== -->
+<section class="cta-section">
+  <div class="container">
+    <!-- Divider Line -->
+    <div class="section-divider"></div>
+    
+    <div class="cta-content">
+      <h2>Earn Free Robux the Safe and Fun Way</h2>
+      <button class="cta-button pulse-animate">Start Earning</button>
+    </div>
+  </div>
+</section>
+
+<?php include 'assets/components/footer.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
