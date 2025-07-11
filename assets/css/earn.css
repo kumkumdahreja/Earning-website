@@ -1,0 +1,259 @@
+/* Play Games Page Styles */
+.play-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    color: var(--text-light);
+}
+
+
+.page-title {
+    color: #d5057f;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: #d5057f;
+    border-radius: 3px;
+}
+
+/* Options Cards */
+.options-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.option-card {
+    background: rgba(38, 37, 63, 0.7);
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.option-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.option-icon {
+    font-size: 1.8rem;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.option-content h3 {
+    color: white;
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.option-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .options-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .page-title {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .options-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .option-card {
+        padding: 20px;
+    }
+}
+
+
+/* Offerwalls Section - Enhanced */
+.offerwalls-section {
+    margin: 50px auto;
+    max-width: 1200px; /* Limited section width */
+    padding: 0 20px;
+}
+
+.section-container {
+    background: rgba(38, 37, 63, 0.5);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    color: #d5057f;
+    font-size: 2rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section-header p {
+    color: #c4d5ff;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.offerwall-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.offerwall-card {
+    background: rgba(38, 37, 63, 0.7);
+    border-radius: 12px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    min-height: 200px;
+    justify-content: space-between;
+}
+
+.offerwall-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.brand-logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    width: 100%;
+}
+
+.brand-logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* Makes logos white */
+    transition: all 0.3s ease;
+}
+
+.offerwall-card:hover .brand-logo {
+    filter: none; /* Original colors on hover */
+}
+
+.play-now-btn {
+    background: linear-gradient(135deg, #d5057f 0%, #d5057f 100%);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 180px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+}
+
+.play-now-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(232, 65, 58, 0.4);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .offerwall-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .offerwall-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .offerwall-card {
+        min-height: 180px;
+        padding: 20px;
+    }
+}
+
+/* Badge Styles */
+.badge {
+    background: #d5057f;
+    color: white;
+    font-size: 0.8rem;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+/* Social Icons */
+.social-icon {
+    font-size: 2.5rem;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.offerwall-card:hover .social-icon {
+    transform: scale(1.1);
+}
+
+/* Task-specific Button */
+.offerwall-card:nth-child(4) .play-now-btn {
+    background: linear-gradient(135deg, #7289da 0%, #5a6eab 100%);
+}
+
+.offerwall-card:nth-child(4) .play-now-btn:hover {
+    box-shadow: 0 5px 15px rgba(114, 137, 218, 0.4);
+}

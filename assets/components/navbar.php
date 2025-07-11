@@ -39,13 +39,7 @@ $user = $isLoggedIn ? $_SESSION['user'] : null;
           <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'index.php' ? 'active' : '' ?>" href="home.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'play.php' ? 'active' : '' ?>" href="play.php">Play</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'rewards.php' ? 'active' : '' ?>" href="rewards.php">Rewards</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'about.php' ? 'active' : '' ?>" href="about.php">About</a>
+          <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'earn.php' ? 'active' : '' ?>" href="earn.php">Earn</a>
         </li>
         <li class="nav-item">
           <a class="nav-link <?php echo basename($_SERVER['PHP_SELF']) == 'contact.php' ? 'active' : '' ?>" href="contact.php">Contact</a>
